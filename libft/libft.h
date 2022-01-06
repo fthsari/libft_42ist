@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 11:55:04 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/06 15:34:58 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/07 00:55:14 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+t_list		*ft_lstnew(void *content);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
