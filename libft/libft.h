@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 11:55:04 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/05 20:17:22 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 15:34:58 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,8 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_striteri(char *str, void (*f)(unsigned int, char*));
-static int	bas_deg(int n);
 char		*ft_itoa(int n);
+char		**ft_split(char const *s, char c);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+#endif

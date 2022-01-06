@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:17:50 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/05 17:28:40 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 12:20:18 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	char	i;
+
+	i = '\n';
 	if (!s)
 		return ;
 	ft_putstr_fd(s, fd);
-	write(fd, '\n', 1);
+	write(fd, &i, 1);
 }

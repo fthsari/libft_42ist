@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 19:12:20 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/05 20:20:17 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 16:14:33 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,34 @@ static int	bas_deg(int n)
 	return (i);
 }
 
+char	*cringe(int i)
+{
+	char	*c;
+
+	if (i == 0)
+	{
+		c = "0";
+		return (c);
+	}
+	if (i == -2147483648)
+	{
+		c = "-2147483648";
+		return (c);
+	}
+	return (NULL);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*result;
 	int		i;
 
-	if (n == 0)
-		return ("0");
 	i = bas_deg(n);
 	result = (char *)malloc((i + 1) * sizeof(char));
+	if (n == 0)
+		return (cringe(n));
+	if (n == -2147483648)
+		return (cringe(n));
 	result[i] = '\0';
 	i--;
 	if (n < 0)

@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 21:44:07 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/03 22:16:19 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 12:19:11 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	*ft_memset(void *b, int c, size_t len)
 		*((unsigned char *)b + i) = c;
 		i++;
 	}
+	return (b);
 }

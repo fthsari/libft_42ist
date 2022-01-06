@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 01:31:10 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 08:50:33 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 12:12:21 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	c;
 
 	i = 0;
-	count = 0;
+	c = 0;
 	if (!dst || !src)
 		return (0);
 	while (src[c])

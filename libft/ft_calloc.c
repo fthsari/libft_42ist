@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 11:25:03 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 11:38:10 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 12:09:21 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@ void	*ft_calloc(size_t count, size_t size)
 	a = (void *)malloc(count * size);
 	if (!a)
 		return (NULL);
-	while (i < count)
-	{
-		a[i] = '0';
-		i++;
-	}
+	ft_bzero(a, count * size);
 	return (a);
 }

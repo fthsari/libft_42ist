@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:22:17 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 10:27:17 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 12:41:13 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (*((unsigned char *) + i) == (unsigned char)c)
+		if (*((unsigned char *)s + i) == (unsigned char)c)
 			return ((void *)s + i);
 		i++;
 	}

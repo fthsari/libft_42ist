@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 08:39:51 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 09:03:02 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 12:11:36 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	if (size == 0)
 		return (ft_strlen(src));
-	else if (size < ft_strlen(dest))
+	else if (size < ft_strlen(dst))
 		value = ft_strlen(src) + size;
 	else
 		value = ft_strlen(dst) + ft_strlen(src);
