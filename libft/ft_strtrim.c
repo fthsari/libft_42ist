@@ -6,22 +6,39 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 15:17:16 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 15:30:23 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 23:45:47 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_char_in_set(char c, const char *set)
+{
+	while (*set)
+		if (c == *set++)
+			return (1);
+	return (0);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	size_s1;
+	char	*str;
+	size_t	i;
+	size_t	start;
+	size_t	end;
 
-	if (!s1 || !set)
+	start = 0;
+	while (s1[start] && ft_char_in_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_char_in_set(s1[end - 1], set))
+		end--;
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
+	if (!str)
 		return (NULL);
-	while (ft_strchr(set, *s1) && *s1 != '\0')
-		s1++;
-	size_s1 = ft_strlen((char *)s1);
-	while (ft_strchr(set, s1[size_s1]) && size_s1 != 0)
-		size_s1--;
-	return (ft_substr((char *)s1, 0, size_s1 + 1));
+	i = 0;
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = 0;
+	return (str);
 }

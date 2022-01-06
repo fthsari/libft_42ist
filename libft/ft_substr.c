@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 12:24:46 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 13:31:13 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/07 00:07:34 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*substr;
-	int				c;
+	char	*rtn;
+	size_t	i;
 
-	c = 0;
-	substr = (char *)malloc((len + 1) * sizeof(char));
-	if (!substr)
+	if (!s)
 		return (NULL);
-	while (s[start])
+	if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
+	rtn = malloc(sizeof(char) * (len + 1));
+	i = 0;
+	if (!rtn)
+		return (0);
+	while (i < len)
 	{
-		substr[c] = s[start];
-		start++;
-		c++;
+		rtn[i] = *(s + start + i);
+		i++;
 	}
-	substr[c] = '\0';
-	return (substr);
+	rtn[i] = '\0';
+	return (rtn);
 }

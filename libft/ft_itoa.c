@@ -6,70 +6,57 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 19:12:20 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/06 16:14:33 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/06 22:29:30 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	bas_deg(int n)
+static char	*ft_divide(char *x, unsigned int number, long int len)
 {
-	int	i;
-
-	i = 1;
-	if (0 > n)
+	while (number > 0)
 	{
-		n = -n;
-		i++;
+		x[len--] = 48 + (number % 10);
+		number = number / 10;
 	}
-	while (n > 9)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
+	return (x);
 }
 
-char	*cringe(int i)
+static long int	ft_len(int n)
 {
-	char	*c;
+	int	len;
 
-	if (i == 0)
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n != 0)
 	{
-		c = "0";
-		return (c);
+		len++;
+		n = n / 10;
 	}
-	if (i == -2147483648)
-	{
-		c = "-2147483648";
-		return (c);
-	}
-	return (NULL);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*result;
-	int		i;
+	char			*x;
+	long int		len;
+	unsigned int	number;
 
-	i = bas_deg(n);
-	result = (char *)malloc((i + 1) * sizeof(char));
+	len = ft_len(n);
+	x = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(x))
+		return (NULL);
+	x[len--] = '\0';
 	if (n == 0)
-		return (cringe(n));
-	if (n == -2147483648)
-		return (cringe(n));
-	result[i] = '\0';
-	i--;
+		x[0] = '0';
 	if (n < 0)
 	{
-		result[0] = '-';
-		n = -n;
+		number = n * -1;
+		x[0] = '-';
 	}
-	while (n != 0 && n > 0)
-	{
-		result[i] = (n % 10) + 48;
-		n = n / 10;
-		i--;
-	}
-	return (result);
+	else
+		number = n;
+	x = ft_divide(x, number, len);
+	return (x);
 }
