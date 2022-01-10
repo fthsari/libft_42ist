@@ -6,7 +6,7 @@
 /*   By: fsari <42istanbul.com.tr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 09:18:48 by fsari             #+#    #+#             */
-/*   Updated: 2022/01/04 09:20:45 by fsari            ###   ########.tr       */
+/*   Updated: 2022/01/10 19:26:17 by fsari            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *str, int c)
 {
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == (char)c)
 			return ((char *)str);
 		str++;
 	}
